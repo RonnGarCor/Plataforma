@@ -2,11 +2,9 @@ package plataform;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-
 import java.sql.SQLException;
 import java.sql.Statement;
 import plataform.Conexion;
-//Se agrego eliminar
 public class Ingreso{
     
        public boolean existeInscrito(String nom){
@@ -54,7 +52,7 @@ public class Ingreso{
     } 
     
     private int getCodigo (String nom){
-         int codigo=0;
+        int codigo=0;
         try {
             Connection conex = Conexion.getConexion ();
             Statement sta = conex.createStatement();
@@ -65,9 +63,7 @@ public class Ingreso{
             }catch (SQLException ex){  
             }
           return codigo;
-        
     }
-     
     public void eliminar(String nom){
         try {
             Connection conex = Conexion.getConexion();
@@ -76,5 +72,4 @@ public class Ingreso{
             }catch (SQLException ex){  
         }
     }
-   
 }

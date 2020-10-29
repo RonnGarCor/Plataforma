@@ -99,7 +99,6 @@ public class Inicio extends JFrame implements ActionListener{
         imgF.setIcon(new ImageIcon(imagenes.getImage().getScaledInstance(imgF.getWidth(), imgF.getHeight(),Image.SCALE_SMOOTH )));
         ven.add(imgF);
     }
-   
     @Override
     public void actionPerformed(ActionEvent e) {
        if(e.getSource()==boton){

@@ -21,6 +21,7 @@ public class VentanaParticipante extends JFrame {
             setLocationRelativeTo (null);
             panel();
             mostrar();
+            
             Toolkit logo= Toolkit.getDefaultToolkit();
              Image miLogo = logo.getImage("imagenes/pf3.png");
             setIconImage(miLogo);
