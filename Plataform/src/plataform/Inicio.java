@@ -41,13 +41,18 @@ public class Inicio extends JFrame implements ActionListener{
        
         panel = new JPanel();   
         this.getContentPane().add(panel);
+        botonIngresar();
         imagenes();
         fondo();
         caja();
-        botonIngresar();
+        
         
         panel.setLayout(null);
       
+        Toolkit logo= Toolkit.getDefaultToolkit();
+       Image miLogo = logo.getImage("Imagenes/pf3.png");
+       setIconImage(miLogo);
+    
        
         setVisible(true);
         

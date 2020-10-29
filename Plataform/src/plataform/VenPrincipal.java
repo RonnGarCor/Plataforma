@@ -26,21 +26,22 @@ public class VenPrincipal extends JFrame implements ActionListener   {
     JButton botonsalir;
     JButton boton ;
     VentanaParticipante vp= new VentanaParticipante();
+    Inicio ini ;
     
     public VenPrincipal(){
-    this.setSize(1500,730);
+    this.setSize(1500,750);
     setTitle("PlataForm");
     setLocationRelativeTo(null);
     this.setResizable(false);
      fondoP= new JPanel();   
     this.getContentPane().add(fondoP);
     fondoP.setLayout(null);
-    
+    botonsalir();
      imagen();
      fondoPrin();
-   
-    Botones();
-    Toolkit logo= Toolkit.getDefaultToolkit();
+     Botones();
+    
+     Toolkit logo= Toolkit.getDefaultToolkit();
     Image miLogo = logo.getImage("Imagenes/pf3.png");
     setIconImage(miLogo);
     //setVisible(true);
@@ -85,12 +86,12 @@ private void imagen (){
     img1.setIcon(new ImageIcon(imagenes1.getImage().getScaledInstance(img1.getWidth(), img1.getHeight(),Image.SCALE_SMOOTH )));
     fondoP.add(img1);
     
- JLabel imgF2 = new JLabel();
+ /*JLabel imgF2 = new JLabel();
     ImageIcon imagenes2= new ImageIcon("imagenes/salir1.png");
     imgF2.setBounds(650,610,100,100);
     imgF2.setIcon(new ImageIcon(imagenes2.getImage().getScaledInstance(imgF2.getWidth(), imgF2.getHeight(),Image.SCALE_SMOOTH )));
     fondoP.add(imgF2);
-    
+   */ 
  JLabel imgF3 = new JLabel();
     ImageIcon imagenes3= new ImageIcon("imagenes/microfono.png");
     imgF3.setBounds(800,610,100,100);
@@ -128,7 +129,15 @@ private void Botones(){
 
 private void botonsalir()
 {
-    
+    botonsalir = new JButton ();
+    botonsalir.setBounds(650,610,100,100);
+    ImageIcon img1=new ImageIcon("imagenes/salir.png");
+    botonsalir.setIcon(new ImageIcon(img1.getImage().getScaledInstance(botonsalir.getWidth()+15,botonsalir.getHeight()+15,Image.SCALE_SMOOTH)));
+   // boton.setContentAreaFilled(false);
+   botonsalir.setBorder(null);
+    fondoP.add(botonsalir);
+    botonsalir.addActionListener(this);
+
 }
 
 @Override
@@ -137,6 +146,14 @@ public void actionPerformed(ActionEvent e){
         
         vp.setVisible(true);
     }
+     if(e.getSource()==botonsalir){
+    
+         ini = new Inicio();
+    
+         ini.setVisible(true);
+        dispose();
+    }
+
 
  }
 
