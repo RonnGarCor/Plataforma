@@ -1,7 +1,6 @@
 
 package plataform;
 
-
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -21,116 +20,29 @@ public class Inicio extends JFrame implements ActionListener{
     JTextField caja ;
     VenPrincipal vp= new VenPrincipal();
     String nomUsuario;
-    //VentanaParticipante vp= new VentanaParticipante();
-    
-    
-    
-    /* 
-    JLabel mensajes;
-    private JButton ingresar;
-    private final JFrame ventana;
-    VenPrincipal vp = new VenPrincipal();
-    JTextField caja;
-   **/ 
-   public Inicio (){
+    public Inicio (){
        
        this.setSize(500,500);
        setTitle("PlataForm");
        setLocationRelativeTo(null);
        this.setResizable(false);
-       
-        panel = new JPanel();   
-        this.getContentPane().add(panel);
-        botonIngresar();
-        imagenes();
-        fondo();
-        caja();
-        
-        
+       panel = new JPanel();   
+       this.getContentPane().add(panel);
+       botonIngresar();
+       imagenes();
+       fondo();    
+       caja();
         panel.setLayout(null);
       
-        Toolkit logo= Toolkit.getDefaultToolkit();
+       Toolkit logo= Toolkit.getDefaultToolkit();
        Image miLogo = logo.getImage("Imagenes/pf3.png");
        setIconImage(miLogo);
-    
+       setVisible(true);
+        
+       setDefaultCloseOperation(EXIT_ON_CLOSE);
        
-        setVisible(true);
-        
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-       
-       
-      /*  ventana = new JFrame("PlataForm");
-        setLocationRelativeTo (null);
-        ventana.setLayout(null);
-        ventana.setLocation(500,200);
-        ventana.setResizable(false);
-        ventana.setSize(600,400);
-        ventana.setVisible(true);
-        ventana.getContentPane().setBackground(Color.gray);
-        //ventana.setContentPane(new JLabel(new ImageIcon("fondo.png")));
-        JLabel titulo = new JLabel();
-        titulo.setVisible(true);
-        titulo.setIcon(new ImageIcon("Imagenes/plataform2.png"));
-        ventana.add(titulo);
-        titulo.setBounds(0, 0, 400,100);
-       
-        JLabel subfondo = new JLabel();
-        subfondo.setVisible(true);
-        subfondo.setIcon(new ImageIcon("Imagenes/subfondo.png"));
-        ventana.add(subfondo);
-        subfondo.setBounds(0, 0, 600,75);
-        
-        JLabel perfil = new JLabel();
-        perfil.setVisible(true);
-        perfil.setIcon(new ImageIcon("Imagenes/perfil.png"));
-        ventana.add(perfil);
-        perfil.setBounds(250, 100, 100,100);
-        
-        
-         JLabel imgF = new JLabel();
-          ImageIcon imagenes= new ImageIcon("imagenes/fondo.png");
-    imgF.setBounds(500,200,600,400);
-    imgF.setIcon(new ImageIcon(imagenes.getImage().getScaledInstance(imgF.getWidth(), imgF.getHeight(),Image.SCALE_SMOOTH )));
-    ventana.add(imgF);
-        
-        botones();
-        cajas();
-        
-        setDefaultCloseOperation (EXIT_ON_CLOSE);
-       **/   
-
 }
-   /*
-   private void botones(){
-    ingresar = new JButton("Ingresar Reunion");
-    ingresar.setVisible(true);
-    ingresar.setBounds(200, 275, 200, 25);
-    ingresar.setIcon(new ImageIcon("boton1.png"));
-    ingresar.setContentAreaFilled(false);
-    ingresar.setBorder(null);
-    ventana.add(ingresar);
-    ingresar.addActionListener(this);
-    
-   }
-   
-   private void cajas(){
-    caja = new JTextField();
-    caja.setVisible(true);
-    caja.setBounds (175, 225, 250, 30);
-    ventana.add(caja);
-   }
-   
-   @Override
-     public void actionPerformed(ActionEvent e){
-       if(e.getSource()==ingresar){
-        
-        vp.setVisible(true);
-      }
-
-    }
-   **/
-
-   public void fondo()
+  public void fondo()
    {
        JLabel imgF = new JLabel();
        ImageIcon imagenes= new ImageIcon("Imagenes/negro.png");
@@ -160,7 +72,6 @@ public class Inicio extends JFrame implements ActionListener{
     boton.setBounds(140,320,200,30);
     ImageIcon img=new ImageIcon("imagenes/boton1.png");
     boton.setIcon(new ImageIcon(img.getImage().getScaledInstance(boton.getWidth()+15,boton.getHeight()+15,Image.SCALE_SMOOTH)));
-    // boton.setContentAreaFilled(false);
     boton.setBorder(null);
     panel.add(boton);
     boton.addActionListener(this);
@@ -172,24 +83,22 @@ public class Inicio extends JFrame implements ActionListener{
         caja.setVisible(true);
         caja.setBounds (120, 240, 250, 30);
            panel.add(caja);
-           
            System.out.println(caja.getText());
        
    }
    
     private void emergencia(){
-    JFrame ven = new JFrame("ERROR");
-    ven.setSize(400,117);
-    ven.setLocationRelativeTo(null);
-    ven.setResizable(false);
-    ven.setVisible(true);
-    JLabel imgF = new JLabel();
-    ImageIcon imagenes= new ImageIcon("Imagenes/noregistro.png");
-    imgF.setBounds(0,0,400,117);
-    imgF.setIcon(new ImageIcon(imagenes.getImage().getScaledInstance(imgF.getWidth(), imgF.getHeight(),Image.SCALE_SMOOTH )));
-    ven.add(imgF);
+       JFrame ven = new JFrame("ERROR");
+        ven.setSize(418,120);
+        ven.setLocationRelativeTo(null);
+        ven.setResizable(false);
+        ven.setVisible(true);
+        JLabel imgF = new JLabel();
+        ImageIcon imagenes= new ImageIcon("Imagenes/noregistro.png");
+        imgF.setBounds(0,0,400,117);
+        imgF.setIcon(new ImageIcon(imagenes.getImage().getScaledInstance(imgF.getWidth(), imgF.getHeight(),Image.SCALE_SMOOTH )));
+        ven.add(imgF);
     }
-   
    
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -204,13 +113,6 @@ public class Inicio extends JFrame implements ActionListener{
            }else{
              emergencia();
            }    
-           
-           /*vp.setVisible(true);
-                nomUsuario=caja.getText();
-               System.out.println(caja.getText());
-               
-               setVisible(false);
-               dispose();*/
        }
     }
    
