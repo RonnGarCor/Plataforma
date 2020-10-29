@@ -17,10 +17,8 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Beimar
- */
+
+
 public class VenPrincipal extends JFrame implements ActionListener   {
     JPanel fondoP;
     JButton botonsalir;
