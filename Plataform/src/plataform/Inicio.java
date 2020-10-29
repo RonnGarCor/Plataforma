@@ -183,6 +183,9 @@ public class Inicio extends JFrame implements ActionListener{
                 vp.setVisible(true);
                 nomUsuario=caja.getText();
                System.out.println(caja.getText());
+               
+               setVisible(false);
+               dispose();
        }
     }
    

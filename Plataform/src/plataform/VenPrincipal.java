@@ -23,6 +23,7 @@ import javax.swing.JPanel;
  */
 public class VenPrincipal extends JFrame implements ActionListener   {
     JPanel fondoP;
+    JButton botonsalir;
     JButton boton ;
     VentanaParticipante vp= new VentanaParticipante();
     
@@ -124,6 +125,12 @@ private void Botones(){
     fondoP.add(boton);
     boton.addActionListener(this);
 }
+
+private void botonsalir()
+{
+    
+}
+
 @Override
 public void actionPerformed(ActionEvent e){
     if(e.getSource()==boton){

@@ -8,7 +8,7 @@ import plataform.Conexion;
 
 public class Ingreso{
     
-       public boolean existe(String nom){
+       private boolean existe(String nom){
         boolean exist = false;
         try {
             Connection conex = Conexion.getConexion();
