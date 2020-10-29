@@ -44,13 +44,13 @@ public class VentanaParticipante extends JFrame {
         }
         
         public void mostrar (){
-           int i = 30;
+           int i = 45;
            try {
             Connection conex = Conexion.getConexion ();
             Statement sta = conex.createStatement();
-            ResultSet rs = sta.executeQuery("SELECT Nombres_y_Apellidos FROM Registro");
+            ResultSet rs = sta.executeQuery("SELECT nomParticipante FROM Participantes");
             while (rs.next()){
-                String nom = rs.getString("Nombres_y_Apellidos");
+                String nom = rs.getString("nomParticipante");
                 JLabel nombre = new JLabel (nom);
                 panel.add(nombre);
                 nombre.setVisible (true);
