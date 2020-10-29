@@ -185,12 +185,22 @@ public class Inicio extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
        if(e.getSource()==boton){
-                vp.setVisible(true);
+           Ingreso ingreso = new Ingreso ();
+           String nom = caja.getText().toUpperCase();
+           if (ingreso.existeInscrito(nom)){
+               ingreso.añadir(nom);
+               vp.setVisible (true);
+               setVisible (false);
+           }else{
+           
+           }    
+           
+           /*vp.setVisible(true);
                 nomUsuario=caja.getText();
                System.out.println(caja.getText());
                
                setVisible(false);
-               dispose();
+               dispose();*/
        }
     }
    

@@ -8,7 +8,7 @@ import plataform.Conexion;
 
 public class Ingreso{
     
-       private boolean existe(String nom){
+       public boolean existeInscrito(String nom){
         boolean exist = false;
         try {
             Connection conex = Conexion.getConexion();
@@ -23,14 +23,44 @@ public class Ingreso{
         }
         return exist;
     }
+       
+       private boolean existeParticipante(String nom){
+        boolean exist = false;
+        try {
+            Connection conex = Conexion.getConexion();
+            Statement sta = conex.createStatement();
+            ResultSet rs = sta.executeQuery("SELECT nomParticipante FROM Participantes");
+            while (rs.next()){
+                if (nom.equals(rs.getString("nomParticipante"))){
+                    exist = true;
+                }
+            }
+            }catch (SQLException ex){    
+        }
+        return exist;
+    }
+       
     public void añadir(String nom){
         try {
-            if(existe(nom)){
+            if(!existeParticipante(nom)){
             Connection conex = Conexion.getConexion ();
             Statement sta = conex.createStatement();
-            ResultSet rs = sta.executeQuery("INSERT INTO Registro VALUES ('"+ nom+")" );
+            int codigo = getCodigo(nom);
+            ResultSet rs = sta.executeQuery("INSERT INTO Registro VALUES (" +codigo+",'"+ nom+"')" );
             }
             }catch (SQLException ex){  
         }
     } 
+    
+    private int getCodigo (String nom){
+         int codigo=0;
+        try {
+            Connection conex = Conexion.getConexion ();
+            Statement sta = conex.createStatement();
+            ResultSet rs = sta.executeQuery("SELECT id from Inscritos where Nombres_y_Apellidos = '"+ nom+"'");
+                codigo = rs.getInt("id");
+            }catch (SQLException ex){  
+            }
+         return codigo;
+    }
 }
