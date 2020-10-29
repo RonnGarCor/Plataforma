@@ -1,10 +1,7 @@
 
 package plataform;
 
-/**
- *
- * @author DELL
- */
+
 public class Plataform {
 
     /**
