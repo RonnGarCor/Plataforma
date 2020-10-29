@@ -33,4 +33,13 @@ public class Ingreso{
             }catch (SQLException ex){  
         }
     } 
+    
+    private void eliminar(String nom){
+        try {
+            Connection conex = Conexion.getConexion ();
+            Statement sta = conex.createStatement();
+            ResultSet rs = sta.executeQuery("delete from Participantes where nomParticipante ="+"'"+nom+"'" );
+            }catch (SQLException ex){  
+        }
+    }
 }
