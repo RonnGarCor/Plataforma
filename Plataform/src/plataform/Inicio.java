@@ -20,6 +20,7 @@ public class Inicio extends JFrame implements ActionListener{
     JButton boton ;
     JTextField caja ;
     VenPrincipal vp= new VenPrincipal();
+    String nomUsuario;
     //VentanaParticipante vp= new VentanaParticipante();
     
     
@@ -171,11 +172,16 @@ public class Inicio extends JFrame implements ActionListener{
        
    }
    
+   private String getParticioante(){
+    return nomUsuario;
+   }
+   
    
     @Override
     public void actionPerformed(ActionEvent e) {
        if(e.getSource()==boton){
                 vp.setVisible(true);
+                nomUsuario=caja.getText();
                System.out.println(caja.getText());
        }
     }
