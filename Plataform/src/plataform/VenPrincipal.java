@@ -119,8 +119,7 @@ private void botonsalir()
     botonsalir.setBounds(650,610,100,100);
     ImageIcon img1=new ImageIcon("imagenes/salir.png");
     botonsalir.setIcon(new ImageIcon(img1.getImage().getScaledInstance(botonsalir.getWidth()+15,botonsalir.getHeight()+15,Image.SCALE_SMOOTH)));
-   // boton.setContentAreaFilled(false);
-   botonsalir.setBorder(null);
+    botonsalir.setBorder(null);
     fondoP.add(botonsalir);
     botonsalir.addActionListener(this);
 
