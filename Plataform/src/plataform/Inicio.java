@@ -3,6 +3,8 @@ package plataform;
 
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,8 +31,7 @@ public class Inicio extends JFrame
         titulo.setIcon(new ImageIcon("Imagenes/plataform2.png"));
         ventana.add(titulo);
         titulo.setBounds(0, 0, 400,100);
-        
-        
+       
         JLabel subfondo = new JLabel();
         subfondo.setVisible(true);
         subfondo.setIcon(new ImageIcon("Imagenes/subfondo.png"));
@@ -42,7 +43,14 @@ public class Inicio extends JFrame
         perfil.setIcon(new ImageIcon("Imagenes/perfil.png"));
         ventana.add(perfil);
         perfil.setBounds(250, 100, 100,100);
-    
+        
+        
+         JLabel imgF = new JLabel();
+          ImageIcon imagenes= new ImageIcon("imagenes/fondo.png");
+    imgF.setBounds(500,200,600,400);
+    imgF.setIcon(new ImageIcon(imagenes.getImage().getScaledInstance(imgF.getWidth(), imgF.getHeight(),Image.SCALE_SMOOTH )));
+    ventana.add(imgF);
+        
         botones();
         cajas();
         

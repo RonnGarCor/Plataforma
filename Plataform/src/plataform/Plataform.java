@@ -15,8 +15,10 @@ public class Plataform {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       Inicio ventana = new Inicio ();
+       //Inicio ventana = new Inicio ();
        //ventana.setVisible (true);
+     VenPrincipal ven= new VenPrincipal();
+       ven.setVisible(true);
     }
     
 }
