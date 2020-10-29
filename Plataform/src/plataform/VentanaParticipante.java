@@ -17,7 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- *
+ *++++++
  */
 public class VentanaParticipante extends JFrame {
     JPanel panel;   
