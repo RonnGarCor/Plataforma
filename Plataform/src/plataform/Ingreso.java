@@ -58,7 +58,9 @@ public class Ingreso{
             Connection conex = Conexion.getConexion ();
             Statement sta = conex.createStatement();
             ResultSet rs = sta.executeQuery("SELECT id from Inscritos where Nombres_y_Apellidos = '"+ nom+"'");
-                codigo = rs.getInt("id");
+                while (rs.next()){
+                    codigo = rs.getInt("id");
+                }
             }catch (SQLException ex){  
             }
          return codigo;

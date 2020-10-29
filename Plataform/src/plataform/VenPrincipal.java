@@ -25,7 +25,6 @@ public class VenPrincipal extends JFrame implements ActionListener   {
     JPanel fondoP;
     JButton botonsalir;
     JButton boton ;
-    VentanaParticipante vp= new VentanaParticipante();
     Inicio ini ;
     
     public VenPrincipal(){
@@ -143,8 +142,9 @@ private void botonsalir()
 @Override
 public void actionPerformed(ActionEvent e){
     if(e.getSource()==boton){
-        
+        VentanaParticipante vp= new VentanaParticipante();
         vp.setVisible(true);
+        
     }
      if(e.getSource()==botonsalir){
     
