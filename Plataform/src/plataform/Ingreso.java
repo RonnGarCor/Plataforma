@@ -46,7 +46,7 @@ public class Ingreso{
             Connection conex = Conexion.getConexion ();
             Statement sta = conex.createStatement();
             int codigo = getCodigo(nom);
-            ResultSet rs = sta.executeQuery("INSERT INTO Registro VALUES (" +codigo+",'"+ nom+"')" );
+            ResultSet rs = sta.executeQuery("INSERT INTO Participantes VALUES (" +codigo+",'"+ nom+"')" );
             }
             }catch (SQLException ex){  
         }
