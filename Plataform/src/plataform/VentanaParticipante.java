@@ -11,30 +11,30 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 /**
  *
  */
 public class VentanaParticipante extends JFrame {
     JPanel panel;   
+    ArrayList <String> lista;
     public VentanaParticipante (){
             this.setSize (350,600);
             setTitle ("LISTA PARTICIPANTES");
             setLocationRelativeTo (null);
             panel();
-            mostrar ();
+            mostrar();
             Toolkit logo= Toolkit.getDefaultToolkit();
              Image miLogo = logo.getImage("imagenes/pf3.png");
             setIconImage(miLogo);
             setDefaultCloseOperation (DISPOSE_ON_CLOSE);
-            
             imagen();
-            
             fondo();
+            
         }
         
         public void panel (){
@@ -45,13 +45,13 @@ public class VentanaParticipante extends JFrame {
         
         public void mostrar (){
            int i = 45;
-           try {
+            try{
             Connection conex = Conexion.getConexion ();
             Statement sta = conex.createStatement();
             ResultSet rs = sta.executeQuery("SELECT nomParticipante FROM Participantes");
             while (rs.next()){
-                String nom = rs.getString("nomParticipante");
-                JLabel nombre = new JLabel (nom);
+                String nomBase = rs.getString ("nomParticipante");
+                JLabel nombre = new JLabel (nomBase);
                 panel.add(nombre);
                 nombre.setVisible (true);
                 nombre.setBounds (10,i,300,25);
@@ -59,6 +59,7 @@ public class VentanaParticipante extends JFrame {
             }
             }catch (SQLException ex){ 
             }
+           
         }
         
         private void fondo(){
@@ -80,4 +81,5 @@ public class VentanaParticipante extends JFrame {
             panel.add(icono); 
         }
 
-}
+ }
+
