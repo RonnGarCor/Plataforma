@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import plataform.Conexion;
 
+
 public class Consultas{
     
        public boolean existe(String nom){
