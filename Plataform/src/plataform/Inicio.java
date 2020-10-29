@@ -177,9 +177,18 @@ public class Inicio extends JFrame implements ActionListener{
        
    }
    
-   private String getParticioante(){
-    return nomUsuario;
-   }
+    private void emergencia(){
+    JFrame ven = new JFrame("ERROR");
+    ven.setSize(400,117);
+    ven.setLocationRelativeTo(null);
+    ven.setResizable(false);
+    ven.setVisible(true);
+    JLabel imgF = new JLabel();
+    ImageIcon imagenes= new ImageIcon("Imagenes/noregistro.png");
+    imgF.setBounds(0,0,400,117);
+    imgF.setIcon(new ImageIcon(imagenes.getImage().getScaledInstance(imgF.getWidth(), imgF.getHeight(),Image.SCALE_SMOOTH )));
+    ven.add(imgF);
+    }
    
    
     @Override
@@ -188,11 +197,12 @@ public class Inicio extends JFrame implements ActionListener{
            Ingreso ingreso = new Ingreso ();
            String nom = caja.getText().toUpperCase();
            if (ingreso.existeInscrito(nom)){
+               vp.setPart(nom);
                ingreso.añadir(nom);
                vp.setVisible (true);
                setVisible (false);
            }else{
-           
+             emergencia();
            }    
            
            /*vp.setVisible(true);

@@ -17,16 +17,16 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Beimar
- */
+
+
 public class VenPrincipal extends JFrame implements ActionListener   {
     JPanel fondoP;
     JButton botonsalir;
     JButton boton ;
-    VentanaParticipante vp= new VentanaParticipante();
     Inicio ini ;
+    VentanaParticipante vp;
+    String nomPart;
+    Ingreso ing;
     
     public VenPrincipal(){
     this.setSize(1500,750);
@@ -41,17 +41,12 @@ public class VenPrincipal extends JFrame implements ActionListener   {
      fondoPrin();
      Botones();
     
-     Toolkit logo= Toolkit.getDefaultToolkit();
+    Toolkit logo= Toolkit.getDefaultToolkit();
     Image miLogo = logo.getImage("Imagenes/pf3.png");
     setIconImage(miLogo);
-    //setVisible(true);
-     setDefaultCloseOperation(EXIT_ON_CLOSE);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
    }
 private void fondoPrin(){
-   /*  fondoP= new JPanel();   
-    this.getContentPane().add(fondoP);
-    fondoP.setLayout(null);
-    */
     JLabel imgF = new JLabel();
     ImageIcon imagenes= new ImageIcon("Imagenes/naranja.png");
     imgF.setBounds(0,600,1900,130);
@@ -86,12 +81,7 @@ private void imagen (){
     img1.setIcon(new ImageIcon(imagenes1.getImage().getScaledInstance(img1.getWidth(), img1.getHeight(),Image.SCALE_SMOOTH )));
     fondoP.add(img1);
     
- /*JLabel imgF2 = new JLabel();
-    ImageIcon imagenes2= new ImageIcon("imagenes/salir1.png");
-    imgF2.setBounds(650,610,100,100);
-    imgF2.setIcon(new ImageIcon(imagenes2.getImage().getScaledInstance(imgF2.getWidth(), imgF2.getHeight(),Image.SCALE_SMOOTH )));
-    fondoP.add(imgF2);
-   */ 
+
  JLabel imgF3 = new JLabel();
     ImageIcon imagenes3= new ImageIcon("imagenes/microfono.png");
     imgF3.setBounds(800,610,100,100);
@@ -111,18 +101,13 @@ private void imagen (){
     imgF5.setIcon(new ImageIcon(imagenes5.getImage().getScaledInstance(imgF5.getWidth(), imgF5.getHeight(),Image.SCALE_SMOOTH )));
     fondoP.add(imgF5);   
     
-   
-    
-    
-    
 } 
 private void Botones(){
     boton = new JButton ();
     boton.setBounds(500,610,100,100);
     ImageIcon img=new ImageIcon("imagenes/int.png");
     boton.setIcon(new ImageIcon(img.getImage().getScaledInstance(boton.getWidth()+15,boton.getHeight()+15,Image.SCALE_SMOOTH)));
-   // boton.setContentAreaFilled(false);
-   boton.setBorder(null);
+    boton.setBorder(null);
     fondoP.add(boton);
     boton.addActionListener(this);
 }
@@ -133,26 +118,31 @@ private void botonsalir()
     botonsalir.setBounds(650,610,100,100);
     ImageIcon img1=new ImageIcon("imagenes/salir.png");
     botonsalir.setIcon(new ImageIcon(img1.getImage().getScaledInstance(botonsalir.getWidth()+15,botonsalir.getHeight()+15,Image.SCALE_SMOOTH)));
-   // boton.setContentAreaFilled(false);
-   botonsalir.setBorder(null);
+    botonsalir.setBorder(null);
     fondoP.add(botonsalir);
     botonsalir.addActionListener(this);
 
+}
+public void setPart(String nom){
+    nomPart=nom;
 }
 
 @Override
 public void actionPerformed(ActionEvent e){
     if(e.getSource()==boton){
-        
+        vp= new VentanaParticipante();
         vp.setVisible(true);
+        
     }
      if(e.getSource()==botonsalir){
-    
+         ing = new Ingreso();
+         ing.eliminar(nomPart);
          ini = new Inicio();
-    
-         ini.setVisible(true);
+        ini.setVisible(true);
         dispose();
-    }
+        vp.setVisible(false);
+        
+     }
 
 
  }

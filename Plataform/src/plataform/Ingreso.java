@@ -2,10 +2,11 @@ package plataform;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.sql.Statement;
 import plataform.Conexion;
-
+//Se agrego eliminar
 public class Ingreso{
     
        public boolean existeInscrito(String nom){
@@ -48,7 +49,7 @@ public class Ingreso{
             int codigo = getCodigo(nom);
             ResultSet rs = sta.executeQuery("INSERT INTO Participantes VALUES (" +codigo+",'"+ nom+"')" );
             }
-            }catch (SQLException ex){  
+        }catch (SQLException ex){  
         }
     } 
     
@@ -58,9 +59,22 @@ public class Ingreso{
             Connection conex = Conexion.getConexion ();
             Statement sta = conex.createStatement();
             ResultSet rs = sta.executeQuery("SELECT id from Inscritos where Nombres_y_Apellidos = '"+ nom+"'");
-                codigo = rs.getInt("id");
+                while (rs.next()){
+                    codigo = rs.getInt("id");
+                }
             }catch (SQLException ex){  
             }
-         return codigo;
+          return codigo;
+        
     }
+     
+    public void eliminar(String nom){
+        try {
+            Connection conex = Conexion.getConexion();
+            Statement sta = conex.createStatement();
+            ResultSet rs = sta.executeQuery("delete from Participantes where nomParticipante = '"+nom+"'");
+            }catch (SQLException ex){  
+        }
+    }
+   
 }
