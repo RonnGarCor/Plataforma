@@ -17,7 +17,6 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Sergio Soliz
  */
 public class VentanaParticipante extends JFrame {
     JPanel panel;   
