@@ -15,7 +15,8 @@ public class Plataform {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       Conexion.getConexion();
+       Inicio ventana = new Inicio ();
+       ventana.setVisible (true);
     }
     
 }
