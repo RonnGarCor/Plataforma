@@ -2,6 +2,7 @@
 package plataform;
 
 
+import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,9 +20,10 @@ public class Inicio extends JFrame
         ventana.setLayout(null);
         ventana.setLocation(500,200);
         ventana.setResizable(false);
-        ventana.setVisible(true);
         ventana.setSize(600,400);
-        ventana.setContentPane(new JLabel(new ImageIcon("Imagenes/fondo.png")));
+        ventana.setVisible(true);
+        ventana.getContentPane().setBackground(Color.gray);
+        //ventana.setContentPane(new JLabel(new ImageIcon("fondo.png")));
         JLabel titulo = new JLabel();
         titulo.setVisible(true);
         titulo.setIcon(new ImageIcon("Imagenes/plataform2.png"));
@@ -43,12 +45,14 @@ public class Inicio extends JFrame
     
         botones();
         cajas();
+        
+        setDefaultCloseOperation (EXIT_ON_CLOSE);
    }
    private void botones(){
     ingresar = new JButton("Ingresar Reunion");
     ingresar.setVisible(true);
     ingresar.setBounds(200, 275, 200, 25);
-    ingresar.setIcon(new ImageIcon("Imagenes/boton1.png"));
+    ingresar.setIcon(new ImageIcon("boton1.png"));
     ingresar.setContentAreaFilled(false);
     ingresar.setBorder(null);
     ventana.add(ingresar);
