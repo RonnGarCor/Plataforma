@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package plataform;
 
 import java.awt.Image;
@@ -16,8 +11,6 @@ import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-
 
 public class VenPrincipal extends JFrame implements ActionListener   {
     JPanel fondoP;
@@ -37,7 +30,7 @@ public class VenPrincipal extends JFrame implements ActionListener   {
     this.getContentPane().add(fondoP);
     fondoP.setLayout(null);
     botonsalir();
-     imagen();
+    imagen();
      fondoPrin();
      Botones();
     
@@ -58,38 +51,34 @@ private void fondoPrin(){
     imgFondo.setBounds(0,0,1500,730);
     imgFondo.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(imgFondo.getWidth(), imgFondo.getHeight(),Image.SCALE_SMOOTH )));
     fondoP.add(imgFondo);
-   
-   
  }
 private void imagen (){
     
     JLabel plataform = new JLabel();
     ImageIcon imagene= new ImageIcon("imagenes/plataform.png");
-   plataform.setBounds(20,20,120,80);
+    plataform.setBounds(20,20,120,80);
     plataform.setIcon(new ImageIcon(imagene.getImage().getScaledInstance(plataform.getWidth(), plataform.getHeight(),Image.SCALE_SMOOTH )));
     fondoP.add(plataform);
 
- JLabel imgF = new JLabel();
+    JLabel imgF = new JLabel();
     ImageIcon imagenes= new ImageIcon("imagenes/invitar.png");
     imgF.setBounds(200,610,100,100);
     imgF.setIcon(new ImageIcon(imagenes.getImage().getScaledInstance(imgF.getWidth(), imgF.getHeight(),Image.SCALE_SMOOTH )));
     fondoP.add(imgF);
     
- JLabel img1 = new JLabel();
+    JLabel img1 = new JLabel();
     ImageIcon imagenes1= new ImageIcon("imagenes/chat.png");
     img1.setBounds(350,610,100,100);
     img1.setIcon(new ImageIcon(imagenes1.getImage().getScaledInstance(img1.getWidth(), img1.getHeight(),Image.SCALE_SMOOTH )));
     fondoP.add(img1);
-    
 
- JLabel imgF3 = new JLabel();
+    JLabel imgF3 = new JLabel();
     ImageIcon imagenes3= new ImageIcon("imagenes/microfono.png");
     imgF3.setBounds(800,610,100,100);
     imgF3.setIcon(new ImageIcon(imagenes3.getImage().getScaledInstance(imgF3.getWidth(), imgF3.getHeight(),Image.SCALE_SMOOTH )));
     fondoP.add(imgF3);
 
- 
- JLabel imgF4 = new JLabel();
+    JLabel imgF4 = new JLabel();
     ImageIcon imagenes4= new ImageIcon("imagenes/video.png");
     imgF4.setBounds(950,610,100,100);
     imgF4.setIcon(new ImageIcon(imagenes4.getImage().getScaledInstance(imgF4.getWidth(), imgF4.getHeight(),Image.SCALE_SMOOTH )));
@@ -111,7 +100,6 @@ private void Botones(){
     fondoP.add(boton);
     boton.addActionListener(this);
 }
-
 private void botonsalir()
 {
     botonsalir = new JButton ();
@@ -126,13 +114,11 @@ private void botonsalir()
 public void setPart(String nom){
     nomPart=nom;
 }
-
 @Override
 public void actionPerformed(ActionEvent e){
     if(e.getSource()==boton){
         vp= new VentanaParticipante();
         vp.setVisible(true);
-        
     }
      if(e.getSource()==botonsalir){
          ing = new Ingreso();
@@ -141,12 +127,8 @@ public void actionPerformed(ActionEvent e){
         ini.setVisible(true);
         dispose();
         vp.setVisible(false);
-        
      }
-
-
- }
-
+   }
 }
 
  

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package plataform;
 
 import java.awt.Image;
@@ -11,31 +6,27 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-/**
- *++++++
- */
+
 public class VentanaParticipante extends JFrame {
     JPanel panel;   
-    ArrayList <String> lista;
     public VentanaParticipante (){
             this.setSize (350,600);
             setTitle ("LISTA PARTICIPANTES");
             setLocationRelativeTo (null);
             panel();
             mostrar();
+            
             Toolkit logo= Toolkit.getDefaultToolkit();
              Image miLogo = logo.getImage("imagenes/pf3.png");
             setIconImage(miLogo);
             setDefaultCloseOperation (DISPOSE_ON_CLOSE);
             imagen();
             fondo();
-            
-        }
+         }
         
         public void panel (){
             panel = new JPanel();
@@ -80,6 +71,5 @@ public class VentanaParticipante extends JFrame {
             icono.setIcon(new ImageIcon(imagen1.getImage().getScaledInstance(icono.getWidth(), icono.getHeight(),Image.SCALE_SMOOTH )));
             panel.add(icono); 
         }
-
  }
 
